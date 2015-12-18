@@ -4,11 +4,11 @@
 
 Thin layer to take care of your http requests working with NSURLSession. Taking care of:
 
--JSON serializer
--Multipart upload
--HTTP Basic/Digest authentication support
--Pluggable object serialization
--background processing support
+* JSON serializer
+* Multipart upload
+* HTTP Basic/Digest authentication support
+* Pluggable object serialization
+* background processing support
 
 100% Swift 2.0.
 
