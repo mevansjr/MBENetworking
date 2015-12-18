@@ -1,6 +1,6 @@
 # MBENetworking
 
-This module currently build with Xcode 7 and supports iOS7 [1], iOS8, iOS9.
+*This module builds with Xcode 7 and supports iOS7 [1], iOS8, iOS9.*
 
 Thin layer to take care of your http requests working with NSURLSession. Taking care of:
 
