@@ -77,3 +77,68 @@ http.GET("/protected/endpoint", completionHandler: {(response, error) in
    // handle response
 })
 ```
+
+### Model: Mapper Example Usage
+
+Create new file, example OAuth.swift.
+
+```
+public class OAuth: Mappable {
+    
+    var access_token: String?
+    var refresh_token: String?
+    var expires_in: Int?
+    var username: String?
+    var password: String?
+    var grant_type: String?
+    var client_id: String?
+    var client_secret: String?
+    var issued: String?
+    var expires: String?
+    
+    public required init?(_ map: Map) {
+        mapping(map)
+    }
+    public required init(){}
+    
+    public func mapping(map: Map) {
+        access_token <- map["access_token"]
+        refresh_token <- map["refresh_token"]
+        expires_in <- map["expires_in"]
+        username <- map["username"]
+        password <- map["password"]
+        grant_type <- map["grant_type"]
+        client_id <- map["client_id"]
+        client_secret <- map["client_secret"]
+        issued <- map[".issued"]
+        expires <- map[".expires"]
+    }
+}
+```
+
+How to map model from HTTP -> Boom!
+
+```
+func getOAuth(completion: (success: OAuth?) -> ()) {
+        self.http.GET(version.stringByAppendingString("/oauth")) { (success, error) -> Void in
+            var oauth: OAuth?
+            if success != nil {
+                if let response = success! as? NSDictionary {
+                    oauth = Mapper().map(response)
+                }
+            }
+            completion(success: oauth)
+        }
+    }
+```
+
+Using the mapped model -> Super Boom!
+
+```
+ClientService.sharedInstance.getOauth { (success) -> () in
+            if success != nil {
+                print(Mapper().toJSONString(success!, prettyPrint: true)!) // will log oauth
+                print(success!.access_token) // will log access token
+            }
+        }
+```
