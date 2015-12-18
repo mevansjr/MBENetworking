@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InController" customModule="Starter" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oet-hn-XqG">
+                    <rect key="frame" x="247" y="230" width="107" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="YTb-kF-VEa"/>
+                        <constraint firstAttribute="width" constant="107" id="bLV-IL-ca7"/>
+                    </constraints>
+                    <state key="normal" title="Get User">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="getUser" destination="-1" eventType="touchUpInside" id="ISL-O6-v4U"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRS-Gg-ucT">
+                    <rect key="frame" x="247" y="324" width="107" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="107" id="HFs-IH-3uA"/>
+                        <constraint firstAttribute="height" constant="46" id="L3P-U0-xYr"/>
+                    </constraints>
+                    <state key="normal" title="Logout">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="clearDefaults" destination="-1" eventType="touchUpInside" id="kem-Pd-amy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.424858556" green="0.77210220029999999" blue="0.65552655530000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QRS-Gg-ucT" firstAttribute="top" secondItem="Oet-hn-XqG" secondAttribute="bottom" constant="48" id="HnJ-El-4g4"/>
+                <constraint firstItem="Oet-hn-XqG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OgH-db-OEh"/>
+                <constraint firstItem="Oet-hn-XqG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-47" id="UlD-06-hUa"/>
+                <constraint firstItem="Oet-hn-XqG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fYJ-D6-PaS"/>
+                <constraint firstItem="QRS-Gg-ucT" firstAttribute="centerX" secondItem="Oet-hn-XqG" secondAttribute="centerX" id="hnv-0f-v2e"/>
+                <constraint firstItem="QRS-Gg-ucT" firstAttribute="top" secondItem="Oet-hn-XqG" secondAttribute="bottom" constant="48" id="kr7-fs-sUB"/>
+                <constraint firstItem="QRS-Gg-ucT" firstAttribute="centerX" secondItem="Oet-hn-XqG" secondAttribute="centerX" id="meu-CY-Mgu"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="OgH-db-OEh"/>
+                    <exclude reference="kr7-fs-sUB"/>
+                    <exclude reference="meu-CY-Mgu"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
